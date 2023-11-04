@@ -1,45 +1,74 @@
-body {
-  font-family: 'Open Sans', sans-serif;
-  padding: 0;
+/* theme.css */
+/* General Styles */
+body, html {
+  height: 100%;
   margin: 0;
-  background-color: #fff;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
   color: #333;
-  transition: background-color 0.3s, color 0.3s;
+  line-height: 1.6;
 }
 
-.container,
-.top-bar {
+.container {
   width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
-header,
-.top-bar {
+/* Header Styles */
+header, .top-bar {
   font-family: 'Libre Baskerville', serif;
-  margin-top: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-}
-
-.navigation,
-.contact-info {
-  display: flex;
   align-items: center;
+  padding: 10px 0;
 }
 
-.name,
-.navigation .name {
-  font-size: 1.5rem;
-  font-weight: 700;
+/* Navigation Styles */
+.navigation, nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 1rem;
 }
 
+nav a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 15px;
+  transition: color 0.3s;
+}
+
+/* Section Styles */
+section {
+  margin-top: 20px;
+}
+
+/* Heading Styles */
+h1, h2 {
+  font-size: 1.75rem;
+  margin: 10px 0;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #333;
+}
+
+/* Content Styles */
+.resume-item, .content-item {
+  margin-bottom: 15px;
+}
+
+.resume-item h3, .content-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+}
+
+/* Theme Switcher Styles */
 .theme-switch {
-  position: relative;
   display: inline-block;
+  position: relative;
   width: 50px;
   height: 24px;
+  margin-left: auto;
 }
 
 .theme-switch input {
@@ -52,23 +81,21 @@ header,
   cursor: pointer;
   top: 0;
   left: 0;
-  right: 0;
   bottom: 0;
-  transition: .4s;
+  right: 0;
+  transition: 0.4s;
   border-radius: 24px;
 }
 
 .slider:before {
-  position: absolute;
   content: "🌒";
+  position: absolute;
   height: 24px;
   width: 24px;
   left: 0;
   bottom: 0;
   background-color: white;
-  transition: .4s;
-  text-align: center;
-  line-height: 24px;
+  transition: 0.4s;
   border-radius: 50%;
 }
 
@@ -77,76 +104,35 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px);
   content: "🌞";
+  transform: translateX(26px);
 }
 
+/* Dark Mode Styles */
 .dark-mode {
   background-color: #333;
   color: #f0f0f0;
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
-  margin-right: 20px;
-  font-weight: 400;
-  transition: color 0.3s;
 }
 
 .dark-mode nav a {
   color: #f0f0f0;
 }
 
-section {
-  margin-top: 20px;
-}
-
-h1, h2 {
-  border-bottom: 1px solid #333;
-  padding-bottom: 5px;
-}
-
-h1 {
-  font-size: 28px;
-}
-
-h2 {
-  font-size: 20px;
-  margin: 10px 0;
-}
-
-p, li {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.resume-item {
-  margin-bottom: 10px;
-}
-
-.resume-item h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.resume-item p, .resume-item ul {
-  margin: 0;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul li:before {
-  content: '•';
-  margin-right: 5px;
-  color: #333;
-}
-
+/* Responsive Styles */
 @media (min-width: 600px) {
   .name {
+    font-size: 2.5rem;
+  }
+
+  nav a {
+    font-size: 1.2rem;
+  }
+
+  h1, h2 {
     font-size: 2rem;
+  }
+
+  .resume-item h3, .content-item h3 {
+    font-size: 1.5rem;
   }
 }
